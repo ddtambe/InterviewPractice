@@ -109,6 +109,20 @@ public class TestCssSelectors {
 
         System.out.println(":nth-child(3) " + element.getText());
     }
+    @Test
+    public void textMethods() {
+        WebElement startsWith = wait.until(ExpectedConditions.visibilityOfElementLocated(By
+                .cssSelector("li[class^='trending-category--f']")));
+        WebElement endssWith = wait.until(ExpectedConditions.visibilityOfElementLocated(By
+                .cssSelector("li[class$='--fonts']")));
+        WebElement contains = wait.until(ExpectedConditions.visibilityOfElementLocated(By
+                .cssSelector("li[class*='category--fonts']")));
+
+        System.out.println("Startswith^: " + startsWith.getText());
+        System.out.println("endsWith$: " + endssWith.getText());
+        System.out.println("contains*: " + contains.getText());
+
+    }
 
     @AfterClass
     public void close() throws InterruptedException {
