@@ -94,6 +94,17 @@ public class TestXpathSelectors {
         System.out.println("And Operator: "+element.getText());
     }
 
+    @Test
+    public void testStartsWith() {
+        List<WebElement> elements = wait.until(ExpectedConditions
+                .visibilityOfAllElementsLocatedBy(By
+                        .xpath("//li[starts-with(@class,'trending-catego')]")));
+
+        for (WebElement element : elements) {
+            System.out.println(element.getText());
+        }
+    }
+
     @AfterClass
     public void testEnd() {
         driver.quit();
