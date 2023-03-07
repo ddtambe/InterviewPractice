@@ -45,6 +45,7 @@ public class TestNavigateCommands {
         driver.navigate().forward();
         Thread.sleep(4000);
         driver.navigate().forward();
+        driver.navigate().refresh();
         //It will not throw an error if the back button is disabled
     }
 
