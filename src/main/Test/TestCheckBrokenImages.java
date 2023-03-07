@@ -48,7 +48,7 @@ public class TestCheckBrokenImages {
             connection.setRequestMethod("HEAD");
             connection.connect();
             int responseCode = connection.getResponseCode();
-            if(responseCode != 200){
+            if(responseCode != HttpURLConnection.HTTP_OK){
                 System.out.println("Image is broken: "+ src);
             }else{
                 System.out.println("Not broken"+ src);
