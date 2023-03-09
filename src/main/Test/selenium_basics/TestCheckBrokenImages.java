@@ -1,3 +1,5 @@
+package selenium_basics;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
