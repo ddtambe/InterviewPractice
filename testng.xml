@@ -15,9 +15,18 @@
                     <include name="testStartsWith"/>
                 </methods>
             </class>-->
-            <class name="testng_basics.TestGroupsAnnotations">
+            <class name="testng_basics.TestParameters">
                 <methods>
-                    <include name="regression1"/>
+                    <parameter name="a" value="5"/>
+                    <parameter name="b" value="3"/>
+                    <include name="add"/>
+                </methods>
+            </class>
+            <class name="testng_basics.TestParameters">
+                <methods>
+                    <parameter name="a" value="5"/>
+                    <parameter name="b" value="3"/>
+                    <include name="multiply"/>
                 </methods>
             </class>
         </classes>
