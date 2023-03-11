@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/HP/IdeaProjects/Interview_Practice">
+        <classes>
+
+            <!--<class name="selenium_basics.TestXpathSelectors">
+                <methods>
+                    <include name="testAttributeValues"/>
+                    <include name="testTextMethod"/>
+                    <include name="testContainsMethod"/>
+                    <include name="testSelectByPosition"/>
+                    <include name="testParentChildRelationship"/>
+                    <include name="testAnd_Or_operators"/>
+                    <include name="testStartsWith"/>
+                </methods>
+            </class>-->
+            <class name="testng_basics.TestGroupsAnnotations">
+                <methods>
+                    <include name="regression1"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
