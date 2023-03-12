@@ -18,6 +18,12 @@ public class TestNgAttributes {
         System.out.println("Dependend method");
     }
 
+    @Test(invocationCount = 5)
+    public void invocationCount(){
+        int i=1;
+        System.out.println("Invocation Count"+i);
+    }
+
     @Test(timeOut = 100)
     public void timesOutExampe() throws InterruptedException {
         System.out.println("Enters to timeout method");
