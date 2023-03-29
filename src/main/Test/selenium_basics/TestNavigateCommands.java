@@ -22,7 +22,7 @@ public class TestNavigateCommands {
 
     @BeforeMethod
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\DevGraphics\\IdeaProjects\\InterviewPractice\\src\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\HP\\IdeaProjects\\Interview_Practice\\src\\chromedriver_win32\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
         options.addArguments("--disable-infobars");

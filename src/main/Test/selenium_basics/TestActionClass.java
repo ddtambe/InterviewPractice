@@ -1,9 +1,6 @@
 package selenium_basics;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.PageLoadStrategy;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Action;
@@ -15,6 +12,10 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.security.KeyStoreException;
 import java.time.Duration;
 
 public class TestActionClass {
@@ -39,16 +40,31 @@ public class TestActionClass {
         driver.get("https://creativemarket.com/");
 
     }
-
-    @Test
     public void actionClass(){
         WebElement logo = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a.upper-nav__logo")));
         WebElement outdoor = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a[href='/search/outdoor']")));
+        WebElement src = null, dest = null;
+        action = new Actions(driver);
 
-//        action.doubleClick(logo).build().perform();
         action.contextClick(outdoor).build().perform();//For right click
-//        action.moveToElement(outdoor).build().perform();
+        action.doubleClick(logo).build().perform(); // Double Click
+        action.moveToElement(outdoor).build().perform(); //Move mouse arrow to element
+        action.dragAndDrop(src, dest).build().perform(); // Drag and drop operation
+        action.dragAndDropBy(logo, 100, 100); // Drag and drop element to particular x and y axis
+        action.moveByOffset(100, 100); // Move the mouse cursor
+        action.scrollByAmount(100,0); //scroll to X and Y amount
+        action.keyDown(Keys.SHIFT).sendKeys("a").perform(); //Keyboard operation
+        action.sendKeys("dev_endra").perform(); // Sends key
     }
 
-
+    public void robotclass() throws AWTException {
+        Robot robot = new Robot();
+        robot.mouseMove(25, 25); // Move mouse and x and y axis
+        robot.keyPress(KeyEvent.VK_Q); // Pressing key
+        robot.keyRelease(KeyEvent.VK_Q);// releasing key
+        robot.mousePress(MouseEvent.BUTTON1_DOWN_MASK); // Mouse Left Click
+        robot.mousePress(MouseEvent.BUTTON2_DOWN_MASK); // Mouse Middle Click
+        robot.mousePress(MouseEvent.BUTTON3_DOWN_MASK); // Mouse Right Click
+        robot.getPixelColor(12, 12);
+    }
 }
